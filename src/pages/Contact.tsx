@@ -16,9 +16,9 @@ const Contact = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Form validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
@@ -29,14 +29,35 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Quote Request Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
 
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
+      if (!response.ok) {
+        throw new Error("Failed to send quote request");
+      }
+
+      toast({
+        title: "Quote Request Sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({ name: "", email: "", phone: "", message: "" });
+
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast({
+        title: "Submission Failed",
+        description: "Please try again later.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -49,7 +70,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-grow pt-20">
         {/* Hero Section */}
         <section className="gradient-dark text-primary-foreground py-20">
@@ -71,7 +92,7 @@ const Contact = () => {
               <div className="animate-fade-in">
                 <div className="bg-card p-8 rounded-lg shadow-medium border border-border">
                   <h2 className="text-2xl font-bold mb-6">Request a Quote</h2>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -82,7 +103,7 @@ const Contact = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="full name"
+                        placeholder="Full name"
                         required
                       />
                     </div>
