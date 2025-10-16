@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import skyline1 from "@/assets/skyline1.jpeg";
+import stairs from "@/assets/staircase.jpeg";
+import villa from "@/assets/villa.jpeg";
+import showcase from "@/assets/showcase.jpeg";
+import residential from "@/assets/residential1.jpeg";
+import beachfront from "@/assets/beachfront.jpeg";
+import industrialWarehouse from "@/assets/industrial_warehouse.jpeg";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
@@ -14,8 +21,8 @@ const Projects = () => {
       id: 1,
       title: "Skyline Tower Facade",
       category: "commercial",
-      description: "Complete curtain wall installation for 25-story commercial building",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
+      description: "Complete curtain wall installation for 8-story commercial building",
+      image: skyline1,
       year: "2024"
     },
     {
@@ -23,15 +30,15 @@ const Projects = () => {
       title: "Luxury Villa Windows",
       category: "residential",
       description: "Custom aluminium windows and sliding doors for modern villa",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+      image: villa,
       year: "2023"
     },
     {
       id: 3,
-      title: "Corporate HQ Entrance",
+      title: "Glass Balustrade Staircase",
       category: "commercial",
-      description: "Architectural entrance system with automatic sliding doors",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
+      description: "Sleek glass and aluminium balustrade for office interior",
+      image: stairs,
       year: "2024"
     },
     {
@@ -39,7 +46,7 @@ const Projects = () => {
       title: "Industrial Warehouse",
       category: "industrial",
       description: "Large-scale industrial doors and window systems",
-      image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&h=600&fit=crop",
+      image: industrialWarehouse,
       year: "2023"
     },
     {
@@ -47,15 +54,23 @@ const Projects = () => {
       title: "Beachfront Residence",
       category: "residential",
       description: "Weather-resistant aluminium systems for coastal property",
-      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
+      image: beachfront,
       year: "2024"
     },
     {
       id: 6,
-      title: "Shopping Mall Atrium",
+      title: "Vitrine",
       category: "commercial",
-      description: "Structural glazing and skylight systems",
-      image: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&h=600&fit=crop",
+      description: "Glass display cabinet with aluminum framing for retail store",
+      image: showcase,
+      year: "2023"
+    },
+    {
+      id: 7,
+      title: "Two-Story House",
+      category: "residential",
+      description: "Modern aluminium windows and doors for suburban home",
+      image: residential,
       year: "2023"
     }
   ];

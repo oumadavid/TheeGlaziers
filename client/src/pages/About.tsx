@@ -104,7 +104,7 @@ const About = () => {
               {[
                 { value: "20+", label: "Years in Business" },
                 { value: "500+", label: "Projects Completed" },
-                { value: "50+", label: "Expert Team Members" },
+                { value: "10+", label: "Expert Team Members" },
                 { value: "98%", label: "Client Satisfaction" }
               ].map((stat, index) => (
                 <div 
