@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -15,6 +17,7 @@ const Contact = () => {
     phone: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,8 +32,10 @@ const Contact = () => {
       return;
     }
 
+    setIsSubmitting(true);
+
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -57,6 +62,8 @@ const Contact = () => {
         description: "Please try again later.",
         variant: "destructive"
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -105,6 +112,7 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="Full name"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
 
@@ -120,6 +128,7 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="sam@example.com"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
 
@@ -134,6 +143,7 @@ const Contact = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+254 712 020 924"
+                        disabled={isSubmitting}
                       />
                     </div>
 
@@ -149,12 +159,28 @@ const Contact = () => {
                         placeholder="Tell us about your project requirements..."
                         rows={5}
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
 
-                    <Button type="submit" variant="accent" size="lg" className="w-full">
-                      Send Quote Request
-                      <Send size={18} />
+                    <Button
+                      type="submit"
+                      variant="accent"
+                      size="lg"
+                      className="w-full"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          Sending...
+                          <Loader2 size={18} className="animate-spin" />
+                        </>
+                      ) : (
+                        <>
+                          Send Quote Request
+                          <Send size={18} />
+                        </>
+                      )}
                     </Button>
                   </form>
                 </div>

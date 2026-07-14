@@ -1,10 +1,16 @@
-const { Resend } = require("resend");
+const nodemailer = require("nodemailer");
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.GMAIL_USER,       // your full gmail address
+    pass: process.env.GMAIL_APP_PASSWORD, // 16-character App Password (not your regular password)
+  },
+});
 
 const sendOwnerNotification = async (formData) => {
-  await resend.emails.send({
-    from: "Highland Glaziers <onboarding@resend.dev>", // or a verified domain if set up
+  await transporter.sendMail({
+    from: `"Highland Glaziers" <${process.env.GMAIL_USER}>`,
     to: process.env.OWNER_EMAIL,
     subject: "New Quote Request from website",
     html: `
@@ -19,8 +25,8 @@ const sendOwnerNotification = async (formData) => {
 };
 
 const sendUserConfirmation = async (formData) => {
-  await resend.emails.send({
-    from: "Highland Glaziers <onboarding@resend.dev>",
+  await transporter.sendMail({
+    from: `"Highland Glaziers" <${process.env.GMAIL_USER}>`,
     to: formData.email,
     subject: "Quote request Received",
     html: `
@@ -34,5 +40,5 @@ const sendUserConfirmation = async (formData) => {
 
 module.exports = {
   sendOwnerNotification,
-  sendUserConfirmation
+  sendUserConfirmation,
 };

@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -18,15 +27,21 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-soft">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-transparent border-b-0 shadow-none"
+          : "bg-background/95 backdrop-blur-sm border-b border-border shadow-soft"
+      }`}
+    >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 gradient-hero rounded-md flex items-center justify-center transition-smooth group-hover:shadow-glow">
-              <span className="text-primary-foreground font-bold text-xl">HG</span>
+            <div className="w-9 h-9 gradient-hero rounded-md flex items-center justify-center transition-smooth group-hover:shadow-glow">
+              <span className="text-primary-foreground font-bold text-lg">HG</span>
             </div>
-            <span className="text-2xl font-bold tracking-tight">Highland Glaziers</span>
+            <span className="text-xl font-bold tracking-tight">Highland Glaziers</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -72,7 +87,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
+          <div className="md:hidden py-4 border-t border-border bg-background animate-fade-in">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
