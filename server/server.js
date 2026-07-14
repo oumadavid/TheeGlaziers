@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: 'https://highlandglaziers.app', // your Vercel URL in production
+  origin: ['https://highlandglaziers.app', 'http://localhost:8080'], // your Vercel URL in production
 }));
 app.use(express.json());
 
