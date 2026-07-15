@@ -9,9 +9,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 gradient-hero rounded-md flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">HG</span>
-              </div>
+              <img
+                src="/logo-master.png"
+                alt="Highland Glaziers logo"
+                className="w-10 h-10 rounded-md object-contain"
+              />
               <span className="text-2xl font-bold">Highland Glaziers</span>
             </div>
             <p className="text-muted-foreground text-sm">
@@ -63,15 +65,26 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3 text-sm text-muted-foreground">
                 <Phone size={18} className="text-primary mt-0.5 flex-shrink-0" />
-                <span>+254 712020924</span>
+                <a href="tel:+254712020924" className="hover:text-primary transition-smooth">
+                  +254 712020924
+                </a>
               </li>
               <li className="flex items-start space-x-3 text-sm text-muted-foreground">
                 <Mail size={18} className="text-primary mt-0.5 flex-shrink-0" />
-                <span>highlandglaziers@gmail.com</span>
+                <a href="mailto:highlandglaziers@gmail.com" className="hover:text-primary transition-smooth">
+                  highlandglaziers@gmail.com
+                </a>
               </li>
               <li className="flex items-start space-x-3 text-sm text-muted-foreground">
                 <MapPin size={18} className="text-primary mt-0.5 flex-shrink-0" />
-                <span>Kibos road, Kisumu, Kenya</span>
+                <a
+                  href="https://www.google.com/maps/search/highland+glaziers/@-0.0708138,34.8115021,17.18z?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-smooth"
+                >
+                  Kibos road, Kisumu, Kenya
+                </a>
               </li>
             </ul>
             

@@ -38,9 +38,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-9 h-9 gradient-hero rounded-md flex items-center justify-center transition-smooth group-hover:shadow-glow">
-              <span className="text-primary-foreground font-bold text-lg">HG</span>
-            </div>
+            <img
+              src="/logo-master.png"
+              alt="Highland Glaziers logo"
+              className="w-9 h-9 rounded-md object-contain transition-smooth group-hover:shadow-glow"
+            />
             <span className="text-xl font-bold tracking-tight">Highland Glaziers</span>
           </Link>
 
