@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight, Shield, Clock, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
@@ -26,6 +27,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Highland Glaziers | Aluminium Construction Specialists in Kisumu</title>
+        <meta name="description" content="Highland Glaziers delivers premium aluminium windows, doors, curtain walls, and facades for residential and commercial projects in Kisumu, Kenya." />
+        <link rel="canonical" href="https://www.highlandglaziers.app/" />
+      </Helmet>
       <Navbar />
       
       <main className="flex-grow">

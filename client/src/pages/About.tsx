@@ -1,4 +1,5 @@
 import { Award, Users, Target, Shield } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -28,6 +29,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>About Us | Highland Glaziers</title>
+        <meta name="description" content="Learn about Highland Glaziers — Kisumu's trusted aluminium construction specialists, dedicated to quality fabrication and installation." />
+        <link rel="canonical" href="https://www.highlandglaziers.app/about" />
+      </Helmet>
       <Navbar />
       
       <main className="flex-grow pt-20">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ExternalLink } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import skyline1 from "@/assets/skyline1.jpeg";
 import stairs from "@/assets/staircase.jpeg";
@@ -81,6 +82,11 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Our Projects | Highland Glaziers</title>
+        <meta name="description" content="Browse completed aluminium construction and glazing projects by Highland Glaziers across Kisumu and beyond." />
+        <link rel="canonical" href="https://www.highlandglaziers.app/projects" />
+      </Helmet>
       <Navbar />
       
       <main className="flex-grow pt-20">

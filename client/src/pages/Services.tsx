@@ -1,5 +1,6 @@
 import { DoorOpen, FrameIcon, Building2, Layers } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -58,6 +59,11 @@ const Services = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Our Services | Highland Glaziers</title>
+        <meta name="description" content="Explore our aluminium construction services: windows, doors, curtain walls, and facades for residential and commercial clients in Kisumu." />
+        <link rel="canonical" href="https://www.highlandglaziers.app/services" />
+      </Helmet>
       <Navbar />
       
       <main className="flex-grow pt-20">

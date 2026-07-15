@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -76,6 +77,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Contact Us | Highland Glaziers</title>
+        <meta name="description" content="Get in touch with Highland Glaziers for a free quote on your aluminium glazing or construction project in Kisumu, Kenya." />
+        <link rel="canonical" href="https://www.highlandglaziers.app/contact" />
+      </Helmet>
       <Navbar />
 
       <main className="flex-grow pt-20">
