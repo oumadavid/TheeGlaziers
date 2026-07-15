@@ -89,17 +89,29 @@ const Footer = () => {
             </ul>
             
             {/* Social Links */}
-            <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-smooth">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-smooth">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-smooth">
-                <Instagram size={20} />
-              </a>
-            </div>
+          <div className="flex space-x-4 mt-6">
+            <a
+              href="https://www.facebook.com/profile.php?id=100063927225209"
+              aria-label="Visit our Facebook page"
+              className="text-muted-foreground hover:text-primary transition-smooth"
+            >
+              <Facebook size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/samson-owage-1968642b6?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              aria-label="Visit our LinkedIn page"
+              className="text-muted-foreground hover:text-primary transition-smooth"
+            >
+              <Linkedin size={20} />
+            </a>
+            <a
+              href="https://www.instagram.com/owage?igsh=MWM4eXB4OXR4ZHBiZQ=="
+              aria-label="Visit our Instagram page"
+              className="text-muted-foreground hover:text-primary transition-smooth"
+            >
+              <Instagram size={20} />
+            </a>
+          </div>
           </div>
         </div>
 

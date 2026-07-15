@@ -1,0 +1,17 @@
+# Highland Glaziers
+
+> Highland Glaziers is a premier aluminium construction company based in Kisumu, Kenya, specializing in the fabrication and installation of windows, doors, curtain walls, and facades for residential and commercial projects.
+
+## Pages
+
+- [Home](https://www.highlandglaziers.app/): Overview of Highland Glaziers and our aluminium construction services.
+- [About](https://www.highlandglaziers.app/about): Learn about our company, experience, and values.
+- [Services](https://www.highlandglaziers.app/services): Detailed breakdown of our aluminium windows, doors, curtain walls, and facade services.
+- [Projects](https://www.highlandglaziers.app/projects): Portfolio of completed aluminium construction and glazing projects.
+- [Contact](https://www.highlandglaziers.app/contact): Request a free quote or get in touch with our team.
+
+## Contact
+
+- Phone: +254 712 020 924
+- Email: highlandglaziers@gmail.com
+- Location: Kibos Road, Kisumu, Kenya
