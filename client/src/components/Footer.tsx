@@ -78,7 +78,7 @@ const Footer = () => {
               <li className="flex items-start space-x-3 text-sm text-muted-foreground">
                 <MapPin size={18} className="text-primary mt-0.5 flex-shrink-0" />
                 <a
-                  href="https://www.google.com/maps/search/highland+glaziers/@-0.0708138,34.8115021,17.18z?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D"
+                  href="https://maps.app.goo.gl/C717pBDfNY1mkCRK9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-smooth"
