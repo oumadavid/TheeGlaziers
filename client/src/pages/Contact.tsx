@@ -209,7 +209,12 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
-                      <p className="text-muted-foreground">+254 712020924</p>
+                      <a
+                        href="tel:+254712020924"
+                        className="text-muted-foreground hover:text-primary transition-smooth"
+                      >
+                        +254 712020924
+                      </a>
                       <p className="text-sm text-muted-foreground">Mon-Fri, 8:00 AM - 6:00 PM</p>
                     </div>
                   </div>
@@ -220,7 +225,12 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-muted-foreground">highlandglaziers@gmail.com</p>
+                      <a
+                        href="mailto:highlandglaziers@gmail.com"
+                        className="text-muted-foreground hover:text-primary transition-smooth"
+                      >
+                        highlandglaziers@gmail.com
+                      </a>
                       <p className="text-sm text-muted-foreground">Response within 24 hours</p>
                     </div>
                   </div>
@@ -231,7 +241,14 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Location</h3>
-                      <p className="text-muted-foreground">Kibos road, Kisumu</p>
+                      <a
+                        href="https://maps.app.goo.gl/C717pBDfNY1mkCRK9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-smooth block"
+                      >
+                        Kibos road, Kisumu
+                      </a>
                       <p className="text-muted-foreground">Behind Generation Hotel</p>
                     </div>
                   </div>
